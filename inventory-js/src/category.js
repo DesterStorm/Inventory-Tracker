@@ -52,7 +52,6 @@ function createCategory() {
         description: document.getElementById('description').value,
     }
 
-
     fetch("http://localhost:3000/categories", {
         method: 'POST',
         body: JSON.stringify(category),
@@ -64,14 +63,6 @@ function createCategory() {
             getCategories()
             Category.newCategoryForm()
         });
-
-}
-
-// Click on categories name to view/hide additional info
-function showMoreInfo() {
-    console.log("this", this)
-    console.log(this.parentElement.querySelector('.additional-info'))
-    toggleHideDisplay(this.parentElement.querySelector('.additional-info'))
 }
 
 // Issue a patch when the edit category form is submitted
@@ -127,10 +118,6 @@ function deleteCategory() {
 }
 
 function addCategoriesClickListeners() {
-    document.querySelectorAll('.category-name').forEach(element => {
-        element.addEventListener("click", showMoreInfo)
-    })
-
     document.querySelectorAll('.edit-category-button').forEach(element => {
         element.addEventListener("click", editCategory)
     })
@@ -138,7 +125,6 @@ function addCategoriesClickListeners() {
     document.querySelectorAll('.delete-category-button').forEach(element => {
         element.addEventListener("click", deleteCategory)
     })
-
 }
 
 function clearCategoriesHtml() {
