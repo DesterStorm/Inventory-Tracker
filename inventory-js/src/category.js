@@ -1,9 +1,9 @@
 const categoryFormFields = `
     <label><strong>Title: </strong></label><br/>
-    <input type="text" id="title"><br/>
+    <input type="text" id="title" required><br/>
     <input type="hidden" id="categoryId">
     <label><strong>Description: </strong></label><br/>
-    <textarea id="description" rows="3" cols="20"></textarea><br/>
+    <textarea id="description" rows="3" cols="20" required></textarea><br/>
 `;
 
 class Category {

@@ -36,10 +36,10 @@ function addItem() {
 
 function renderItemFormFields(categoryId) {
     return `<label><strong>Name: </strong></label><br/>
-    <input type="text" id="name"><br/>
+    <input type="text" id="name" required><br/>
     <input type="hidden" id="item-categoryId" value="${categoryId}">
     <label><strong>Quantity: </strong></label><br/>
-    <input type="text" id="quantity"><br/>
+    <input type="text" id="quantity" required><br/>
     <input type="hidden" id="item-categoryId" value="${categoryId}">
     <label><strong>Color: </strong></label><br/>
     <input type="text" id="color"><br/>
