@@ -41,5 +41,3 @@ a category object and attaches the stringified object to the body of the POST re
 table of the Rails API's schema, and a sorting method for the items belonging to it.
 11. static newCategoryForm() and static editCategoryForm() renders the html for creating
 a new category and editing one respectively.
-
-
