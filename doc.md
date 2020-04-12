@@ -2,10 +2,10 @@ Index.html
 1. sets the header to the name of the app, the stylesheet to style.css
 and a message defining the purpose of the app
 
-2. contains the card and container divs which house the majority of the 
+2. contains the card and container divs which house the majority of the javascript based
 html in the app.
 
-3. sets the order of the scripts which interact with it
+3. sets the order of the scripts which interact with Index.html
 
 Index.js
 1. DOMContentLoaded is called to load the DOM at the start of the app
@@ -53,5 +53,5 @@ a category object and attaches the stringified object to the body of the POST re
 10. class Category{} is constructed with the corresponding attributes of the categories 
 table of the Rails API's schema, and a sorting method for the items belonging to it.
 
-11. static newCategoryForm() and static editCategoryForm() renders the html for creating
-a new category and editing one respectively.
+11. static newCategoryForm() and static editCategoryForm() renders the html, using categoryFormFields, to create
+a new category and editing one respectively and handles form validations.
