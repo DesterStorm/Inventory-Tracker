@@ -14,6 +14,7 @@ class Category {
         this.items = data.items.sort((a,b) => (a.updated_at < b.updated_at) ? 1 : ((b.updated_at < a.updated_at) ? -1 : 0));
     }
 
+    // static methods only called on the class itself
     static newCategoryForm() {
         let newCategoryFormDiv = document.getElementById('category-form')
         newCategoryFormDiv.innerHTML = `
@@ -55,7 +56,9 @@ function createCategory() {
     fetch("http://localhost:3000/categories", {
         method: 'POST',
         body: JSON.stringify(category),
+        // tells the client what vvv the content type of the returned content actually is.
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        // advertises which content types, expressed as MIME types, the ^^^ client is able to understand.
     })
         .then(resp => resp.json() )
         .then(category => {
@@ -134,9 +137,12 @@ function clearCategoriesHtml() {
 
 Category.prototype.categoryItemsHtml = function () {
     let categoryItems = this.items.map(item => {
+        // debugger
+        let date = parseDate(item.updated_at)
 
         return (`
         <div class="card" data-item-id="${item.id}" >
+        <strong><i>Last update: </i></strong>${date} <br/>
         <strong>Name: </strong>${item.name} <br/>
         <strong>Details: </strong>${item.details} <br/>
         <strong>Quantity: </strong>${item.quantity} <br/>
@@ -154,8 +160,7 @@ Category.prototype.categoryItemsHtml = function () {
 Category.prototype.categoryHtml = function () {
 
     return `<div class="card" data-category-id="${this.id}">
-            
-            </br>
+<!--            </br>-->
             <strong class="category-title">${this.title}</strong> <br/>
             <strong>Description: </strong>${this.description}<br/>
             <button class="view-items-category-button">View Inventory</button>  
@@ -195,3 +200,9 @@ function renderCategoriesHtml(data) {
         selectedCategoryHtml.querySelector('.items').appendChild(newCategory.addItemButton())
     });
 }
+
+
+
+
+
+

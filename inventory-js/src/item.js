@@ -15,6 +15,7 @@ class Item {
 
 function addItem() {
     const item = {
+        // returns the item attribute elements
         name: document.getElementById('name').value,
         quantity: document.getElementById('quantity').value,
         color: document.getElementById('color').value,
@@ -24,9 +25,12 @@ function addItem() {
 
     fetch("http://localhost:3000/items", {
         method: 'POST',
+        // turns the item attributes given by their elements into json data
+        // and returns a promise
         body: JSON.stringify(item),
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
     })
+        // turns the response into a json element
         .then(resp => resp.json())
         .then(item => {
             clearCategoriesHtml()

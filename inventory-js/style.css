@@ -44,7 +44,7 @@ form input, textarea {
 div.card {
     background-color: #dbdbdb;
     box-shadow: 0 0 10px 2px;
-    padding: 5px;
+    padding: 10px 5px 10px 5px;
     border-radius: 5px;
     margin: 20px;
 }
